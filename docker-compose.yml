@@ -1,9 +1,8 @@
 version: "3"
 services:
   app:
+    image: solxun/devops-for-programmers-project-lvl1
     build:
       context: app
       dockerfile: Dockerfile
     command: make test
-    volumes:
-      - "./app:/app"
