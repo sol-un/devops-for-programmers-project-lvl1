@@ -1,5 +1,6 @@
 compose:
 	docker-compose up -d
 
-compose-test:
+ci:
+	cp app/.env.example app/.env
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
