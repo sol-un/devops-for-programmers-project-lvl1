@@ -3,8 +3,8 @@ services:
   app:
     image: solxun/devops-for-programmers-project-lvl1
     build:
-      context: app
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.production
     command: bash -c 'sleep 3 && make test'
     depends_on:
       - db
@@ -12,4 +12,5 @@ services:
   db:
     image: postgres:latest
     environment:
+      POSTGRES_NAME: postgres
       POSTGRES_PASSWORD: password
