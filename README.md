@@ -16,5 +16,5 @@ Guidance for this project, as well as JS Fasitfy Blog, were provided by Hexlet, 
 
 ```
 docker pull solxun/devops-for-programmers-project-lvl1 // pull the image
-make compose // run the app
+make compose // run the app at https://localhost/
 ```
