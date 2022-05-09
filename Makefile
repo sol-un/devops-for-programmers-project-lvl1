@@ -1,4 +1,8 @@
+env-prepare:
+	cp .env.example .env
+
 compose:
+	make env-prepare
 	docker-compose up -d
 
 compose-build:
@@ -14,7 +18,7 @@ compose-restart:
 	docker-compose restart
 
 ci:
-	cp app/.env.example app/.env
+	make env-prepare
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 push:

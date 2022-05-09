@@ -6,6 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: make test
+    environment:
+      DATABASE_NAME: $DATABASE_NAME
+      DATABASE_USERNAME: $DATABASE_USERNAME
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
+      DATABASE_PORT: $DATABASE_PORT
+      DATABASE_HOST: $DATABASE_HOST
     depends_on:
       db:
         condition: service_healthy
@@ -18,5 +24,5 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      POSTGRES_NAME: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_NAME: $DATABASE_NAME
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
