@@ -14,7 +14,18 @@ Guidance for this project, as well as JS Fasitfy Blog, were provided by Hexlet, 
 
 ### Usage
 
-```
-docker pull solxun/devops-for-programmers-project-lvl1 // pull the image
-make compose // run the app at https://localhost/
-```
+Run `docker pull solxun/devops-for-programmers-project-lvl1` to pull the image. When developing locally, use `make` commands:
+
+`make compose` starts the app at https://localhost
+
+`make compose-build` builds the app
+
+`make compose-down` stops and removes containers, networks, volumes, and images
+
+`make compose-stop` stops containers without removing
+
+`make compose-restart` restarts the app
+
+`make ci` runs tests
+
+`make push` pushes the latest version to DockerHub
